@@ -1,0 +1,20 @@
+<div *ngIf="listQuotes.length === 0" class="card bg-light">
+  <div class="card-body">
+    <div class="card-title text-center">There are no Quotes to show</div>
+  </div>
+</div>
+<div *ngFor="let c of listQuotes; let i = index" class="card mb-2">
+  <div class="card-body">
+    <p class="card-text"><span>Name: </span>{{ c.name }}</p>
+    <p class="card-text"><span>Date: </span>{{ c.date }}</p>
+    <p class="card-text"><span>Time: </span>{{ c.time }}</p>
+    <p class="card-text"><span>Symptoms: </span>{{ c.symptoms }}</p>
+    <button
+      style="width: 100%"
+      class="btn btn-danger btn-block"
+      (click)="deleteQuotesC(i)"
+    >
+      Delete
+    </button>
+  </div>
+</div>
